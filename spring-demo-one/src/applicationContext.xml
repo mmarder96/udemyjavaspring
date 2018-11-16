@@ -33,10 +33,9 @@
 	</bean>
 
 	<bean id="myCricketCoach"
-		class="com.luv2code.springdemo.CricketCoach">
+		class="com.luv2code.springdemo.CricketCoach">	
 		<!-- set up reference setter injection -->
 		<property name="fortuneService" ref="myFortune" />
-
 		<!-- set up literal setter injection -->
 		<property name="emailAddress" value="${foo.email}" />
 		<property name="team" value="${foo.team}" />
