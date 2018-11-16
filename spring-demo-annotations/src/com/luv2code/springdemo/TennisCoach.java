@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Component
 public class TennisCoach implements Coach {
 
+	@Autowired
 	private FortuneService fortuneService;
 
 	// create default constructor
@@ -28,10 +29,10 @@ public class TennisCoach implements Coach {
 		return fortuneService.getFortune();
 	}
 	
-	@Autowired
-	public void setFortuneService(FortuneService fortuneService) {
-		System.out.println("TennisCoach: inside setFortuneService() method");
-		this.fortuneService = fortuneService;
-	}
+//	@Autowired
+//	public void setFortuneService(FortuneService fortuneService) {
+//		System.out.println("TennisCoach: inside setFortuneService() method");
+//		this.fortuneService = fortuneService;
+//	}
 	
 }
