@@ -2,8 +2,8 @@ package com.luv2code.springdemo;
 
 import org.springframework.stereotype.Component;
 
-@Component("thatSillyCoach")
-public class TennisCaoch implements Coach {
+@Component
+public class TennisCoach implements Coach {
 
 	@Override
 	public String getDailyWorkout() {
