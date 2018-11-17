@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 @Component
 public class TennisCoach implements Coach {
 
-	@Autowired
-	@Qualifier("randomFortuneService")
+//	@Autowired
+//	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 
 	// create default constructor
@@ -16,10 +16,11 @@ public class TennisCoach implements Coach {
 		System.out.println("TennisCoach: inside default constructor");
 	}
 	
-//	@Autowired
-//	public TennisCoach(FortuneService myFortuneService) {
-//		fortuneService = myFortuneService;
-//	}
+	@Autowired
+	public TennisCoach(@Qualifier("fileFortuneService") FortuneService myFortuneService) {
+		System.out.println("TennisCoach: inside constructor using @autowired and @qualifier");
+		fortuneService = myFortuneService;
+	}
 
 	@Override
 	public String getDailyWorkout() {
