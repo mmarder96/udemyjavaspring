@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 public class TennisCoach implements Coach {
 
 	@Autowired
-	@Qualifier("happyFortuneService")
+	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 
 	// create default constructor
