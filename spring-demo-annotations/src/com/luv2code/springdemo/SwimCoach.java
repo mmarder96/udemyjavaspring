@@ -3,6 +3,8 @@ package com.luv2code.springdemo;
 public class SwimCoach implements Coach {
 
     private FortuneService fortuneService;
+    private String email;
+    private String team;
 
     public SwimCoach(FortuneService myFortuneService) {
         fortuneService = myFortuneService;
