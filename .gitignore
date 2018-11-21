@@ -1,3 +1,12 @@
+# General files
+spring-hibernate-source-code-v20
+
+# Eclipse files
 .metadata
 .recommenders
-spring-hibernate-source-code-v20
+.project
+
+# IntelliJ files
+.idea
+*.iml
+out
