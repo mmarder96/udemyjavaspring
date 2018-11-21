@@ -13,13 +13,14 @@ public class FileFortuneService implements FortuneService {
 	
 	// create array of fortunes from fortune.properties file
 	@Value("${fortune.array}")
-	String[] fortunes;
+	private String[] fortunes;
 
 	@Override
 	public String getFortune() {
 		// return random fortune
 		int randIdx = rand.nextInt(fortunes.length);
-		return fortunes[randIdx];
+		String fortune = fortunes[randIdx];
+		return fortune;
 	}
 
 }
