@@ -8,7 +8,13 @@
 
 <body>
 
-The  student is confirmed: ${student.firstName} ${student.lastName}
+<!-- calls student.getFirstName() and student.getLastName() -->
+The student is confirmed: ${student.firstName} ${student.lastName}
+
+<br>
+
+<!-- calls student.getCountry() -->
+Country: ${student.country}
 
 </body>
 

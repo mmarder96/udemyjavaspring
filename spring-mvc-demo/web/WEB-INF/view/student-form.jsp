@@ -10,17 +10,26 @@
 
 <body>
 
-    <form:form action="processform" modelAttribute="student">
+<form:form action="processform" modelAttribute="student">
 
-        <!-- calls student.setFirstName() -->
-        First name: <form:input path="firstName" />
-        <br>
-        <!-- calls student.setLastName() -->
-        Last name: <form:input path="lastName" />
-        <br>
-        <input type="submit" value="Submit" />
+    <!-- calls student.setFirstName() -->
+    First name: <form:input path="firstName"/>
+    <br>
+    <!-- calls student.setLastName() -->
+    Last name: <form:input path="lastName"/>
+    <br>
+    <!-- calls student.Country() -->
+    Country:
+    <form:select path="country">
 
-    </form:form>
+        <!-- calls student.getCountryOptions to generate options from linkedHashMap -->
+        <form:options items="${options}"/>
+
+    </form:select>
+
+    <input type="submit" value="Submit"/>
+
+</form:form>
 
 </body>
 
