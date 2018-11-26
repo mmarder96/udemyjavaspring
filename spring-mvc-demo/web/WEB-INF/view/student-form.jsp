@@ -37,6 +37,12 @@
 
     <br>
 
+    <!-- calls student.setFavoriteOperatingSystems() -->
+    Operating Systems:
+    <form:checkboxes path="favoriteOperatingSystems" items="${student.favoriteOSOptions}"/>
+
+    <br>
+
     <input type="submit" value="Submit"/>
 
 </form:form>
