@@ -18,7 +18,7 @@
     <li><a href="hello/showform">Hello World form</a></li>
 </ul>
 
-<br><br>
+<br>
 
 <input type="button" onclick="doSomeWork()" value="Click Me"/>
 
