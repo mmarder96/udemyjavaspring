@@ -14,18 +14,28 @@
 
     <!-- calls student.setFirstName() -->
     First name: <form:input path="firstName"/>
+
     <br>
+
     <!-- calls student.setLastName() -->
     Last name: <form:input path="lastName"/>
+
     <br>
-    <!-- calls student.Country() -->
+
+    <!-- calls student.setCountry() -->
     Country:
     <form:select path="country">
-
         <!-- calls student.getCountryOptions to generate options from linkedHashMap -->
         <form:options items="${options}"/>
-
     </form:select>
+
+    <br>
+
+    <!-- calls student.setFavoriteLanguage() -->
+    Favorite Language:
+    <form:radiobuttons path="favoriteLanguage" items="${student.favoriteLanguageOptions}"/>
+
+    <br>
 
     <input type="submit" value="Submit"/>
 
