@@ -15,7 +15,7 @@ public class StudentController {
     @Value("#{countryOptions}")
     private Map<String, String> countryOptions;
 
-    @RequestMapping("/showform")
+    @RequestMapping("/showForm")
     public String showForm(Model myModel) {
 
         // create a student object
@@ -28,7 +28,7 @@ public class StudentController {
         return "student-form";
     }
 
-    @RequestMapping("/processform")
+    @RequestMapping("/processForm")
     public String processForm(@ModelAttribute("student") Student myStudent) {
         return "student-confirmation";
     }

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class HelloWorldController {
 
     // need a controller method to show initial html form
-    @RequestMapping("/showform")
+    @RequestMapping("/showForm")
     public String showForm() {
         return "helloworld-form";
     }

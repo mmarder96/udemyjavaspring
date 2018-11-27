@@ -15,8 +15,10 @@
 <h2>Spring MVC Demo - Home Page</h2>
 
 <ul id="links">
-    <li><a href="hello/showform">Hello World form</a></li>
-    <li><a href="student/showform">Student form</a></li>
+    <li><a href="hello/showForm">Hello World form</a></li>
+    <li><a href="student/showForm">Student form</a></li>
+    <li><a href="customer/showForm">Customer form</a></li>
+
 </ul>
 
 <br>
