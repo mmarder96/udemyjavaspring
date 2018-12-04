@@ -38,12 +38,12 @@ public class QueryStudentDemo {
             System.out.println("\nStudents with last name Joestar");
             displayStudents(theStudents);
 
-            // query students with last name Joestar OR first name Dio
+            // query students with last name Kujo OR first name Dio
             theStudents = session.createQuery("from Student s where " +
                     "s.lastName = 'Kujo' or s.firstName = 'Dio'").getResultList();
 
             // display the students
-            System.out.println("\nStudents with last name Joestar or first name Dio");
+            System.out.println("\nStudents with last name Kujo or first name Dio");
             displayStudents(theStudents);
 
             // query students with email ending with luv2code.com
