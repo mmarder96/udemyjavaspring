@@ -15,14 +15,11 @@ public class DeleteStudentDemo {
                 .addAnnotatedClass(Student.class)
                 .buildSessionFactory();
 
-        // create session
-        Session session = factory.getCurrentSession();
-
         try {
             int studentId = 1;
 
             // get a new session and start transaction
-            session = factory.getCurrentSession();
+            Session session = factory.getCurrentSession();
             session.beginTransaction();
 
             // retrieve student based on the id: primary key
