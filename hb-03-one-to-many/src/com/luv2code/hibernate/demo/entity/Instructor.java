@@ -1,6 +1,7 @@
 package com.luv2code.hibernate.demo.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -86,6 +87,15 @@ public class Instructor {
 
     public void setCourses(List<Course> courses) {
         this.courses = courses;
+    }
+
+    public void add(Course course) {
+
+        if (courses == null)
+            this.courses = new ArrayList<>();
+        this.courses.add(course);
+
+        course.setInstructor(this);
     }
 
     @Override
