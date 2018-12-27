@@ -14,7 +14,7 @@ public class EagerLazyDemo {
         // create session factory
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Instructor.class)
+                .addAnnotatedClass(Instructor.class)c
                 .addAnnotatedClass(InstructorDetail.class)
                 .addAnnotatedClass(Course.class)
                 .buildSessionFactory();
