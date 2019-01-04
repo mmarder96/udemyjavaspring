@@ -5,7 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class CreateCourseAndStudentsDemo {
+public class GetCoursesForMaryDemo {
 
     public static void main(String[] args) {
 
@@ -27,27 +27,11 @@ public class CreateCourseAndStudentsDemo {
             // start a transaction
             session.beginTransaction();
 
-            // create a course
-            Course tempCourse = new Course("Pacman - How To Score One Million Points");
-
-            // save the course ... and leverage the cascade all
-            System.out.println("\nSaving the course...");
-            session.save(tempCourse);
-            System.out.println("Saving the course: " + tempCourse);
-
-            // create the students
-            Student tempStudent1 = new Student("John", "Doe", "John@luv2code.com");
-            Student tempStudent2 = new Student("Mary", "Public", "mary@luv2code.com");
-
-            // add students to the course
-            tempCourse.addStudent(tempStudent1);
-            tempCourse.addStudent(tempStudent2);
-
-            // save the students
-            System.out.println("\nSaving students...");
-            session.save(tempStudent1);
-            session.save(tempStudent2);
-            System.out.println("Saved students: " + tempCourse.getStudents());
+            // get the student mary from the db
+            int theId = 2;
+            Student tempStudent = session.get(Student.class, theId);
+            System.out.println("\nLoaded student: " + tempStudent);
+            System.out.println("\nLoaded courses: " + tempStudent.getCourses());
 
             // commit the transaction
             session.getTransaction().commit();

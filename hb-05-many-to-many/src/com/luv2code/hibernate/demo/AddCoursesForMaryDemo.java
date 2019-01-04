@@ -5,7 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class CreateCourseAndStudentsDemo {
+public class AddCoursesForMaryDemo {
 
     public static void main(String[] args) {
 
@@ -27,27 +27,23 @@ public class CreateCourseAndStudentsDemo {
             // start a transaction
             session.beginTransaction();
 
-            // create a course
-            Course tempCourse = new Course("Pacman - How To Score One Million Points");
+            // get the student mary from the db
+            int theId = 2;
+            Student tempStudent = session.get(Student.class, theId);
+            System.out.println("\nLoaded student: " + tempStudent);
 
-            // save the course ... and leverage the cascade all
-            System.out.println("\nSaving the course...");
-            session.save(tempCourse);
-            System.out.println("Saving the course: " + tempCourse);
+            // create more courses
+            Course tempCourse1 = new Course("Rubik's Cube - How to Speed Cube");
+            Course tempCourse2 = new Course("Atari 2600 - Game Development");
 
-            // create the students
-            Student tempStudent1 = new Student("John", "Doe", "John@luv2code.com");
-            Student tempStudent2 = new Student("Mary", "Public", "mary@luv2code.com");
+            // add student to courses
+            tempCourse1.addStudent(tempStudent);
+            tempCourse2.addStudent(tempStudent);
 
-            // add students to the course
-            tempCourse.addStudent(tempStudent1);
-            tempCourse.addStudent(tempStudent2);
-
-            // save the students
-            System.out.println("\nSaving students...");
-            session.save(tempStudent1);
-            session.save(tempStudent2);
-            System.out.println("Saved students: " + tempCourse.getStudents());
+            // save courses
+            System.out.println("\nSaving the courses...");
+            session.save(tempCourse1);
+            session.save(tempCourse2);
 
             // commit the transaction
             session.getTransaction().commit();
